@@ -1,3 +1,17 @@
+*  {
+    padding: 0;
+    margin: 0 ;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(wp4385848.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}
+
 .registration-form{
 position: absolute;
 top: 50%;

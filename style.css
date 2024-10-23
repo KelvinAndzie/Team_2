@@ -5,9 +5,7 @@
 }
 
 body{
-    background-image: url(wp4385848.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+   
     background-size: cover;
     color: #fff;
 }
@@ -55,5 +53,6 @@ width: 350px;
 }
 
 .registration-form button:hover {
-    background-color: rgb(13, 13, 202);
+    cursor: pointer;
+    background-color: rgb(96, 117, 163);
 }

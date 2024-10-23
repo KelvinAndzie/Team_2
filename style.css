@@ -5,10 +5,16 @@
 }
 
 body{
-   
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url(wp4385848.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     color: #fff;
 }
+
 
 .registration-form{
 position: absolute;

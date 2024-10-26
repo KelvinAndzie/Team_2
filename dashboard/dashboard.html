@@ -14,8 +14,11 @@
         </div>
         <ul class="menu">
             <li><a href="#">Dashboard Overview</a></li>
-
         </ul>
+        <div class="logout" id="logout" onclick="showLogoutDialog()">
+            <div>LogOut</div>
+            <img src="logout.png" alt="logout" class="img">
+        </div>
     </aside>
 
 
@@ -79,6 +82,13 @@
                 <li>Sports Day event scheduled for Nov 5, 2024.</li>
             </ul>
         </section>
+        <div id="logout-dialog" class="dialog-overlay" style="display: none;">
+            <div class="dialog-box">
+                <p>Are you sure you want to log out?</p>
+                <button onclick="confirmLogout(true)">Yes</button>
+                <button onclick="confirmLogout(false)">No</button>
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

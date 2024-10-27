@@ -17,7 +17,6 @@ document.getElementById('register').addEventListener('click', function(e) {
         localStorage.setItem('password', password);
 
         alert('Registration Successful!');
-        document.getElementsById('registration-form').reset();
         }
     }
 });

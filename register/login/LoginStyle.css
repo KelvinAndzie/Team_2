@@ -114,5 +114,6 @@ text-decoration: underline;
 }
 
 .register-link p a:hover {
+    color: blue;
     text-decoration: underline;
 }

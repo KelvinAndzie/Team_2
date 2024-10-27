@@ -62,3 +62,20 @@ width: 350px;
     cursor: pointer;
     background-color: rgb(96, 117, 163);
 }
+
+.login-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;  
+  }
+
+.login-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link p a:hover {
+    color: blue;
+    text-decoration: underline;
+}

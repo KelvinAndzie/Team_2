@@ -59,3 +59,15 @@ const attendanceData = new Chart(attendanceChart, {
         responsive: true
     }
 });
+
+function showLogoutDialog() {
+    document.getElementById('logout-dialog').style.display = 'flex';
+};
+
+function confirmLogout(isConfirmed){
+    document.getElementById('logout-dialog').style.display = 'none';
+
+    if (isConfirmed){
+        window.location.href = '../register/login/login.html';
+    }
+}

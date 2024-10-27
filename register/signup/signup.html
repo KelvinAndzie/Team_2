@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="registration-form">
+    <div id="registration-form" class="registration-form">
       <h1>Registration Form</h1>  
       <form action="#" method="post"></form>
       <p>Full Name</p>
       <input type="text" name="fullname" placeholder="Full Name">
       <p>User Name</p>
-      <input type="text" name="username" placeholder="User Name">
+      <input type="text" name="username" id="username" placeholder="User Name" required>
       <p>Email</p>
       <input type="text" name="email" placeholder="Email">
       <p>Password</p>
@@ -21,6 +21,12 @@
       <p>Confirm Password</p>
       <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" required>
       <button type="submit" id="register"> Register</button>
+      <div class="login-link">
+        <p>
+            already have an account? 
+            <a href="#" id="login">login</a>
+        </p>
+      </div>
 
     </div>
     <script src="signup.js"></script>

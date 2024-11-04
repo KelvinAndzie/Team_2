@@ -1,3 +1,6 @@
+if(sessionStorage.getItem('isLoggedIn') !== 'true'){
+    window.location.href = '../register/login/login.html'
+}
 
 const performanceChart = document.getElementById('performanceChart').getContext('2d');
 const performanceData = new Chart(performanceChart, {
@@ -68,6 +71,7 @@ function confirmLogout(isConfirmed){
     document.getElementById('logout-dialog').style.display = 'none';
 
     if (isConfirmed){
+        sessionStorage.setItem('isLoggedIn','false');
         window.location.href = '../register/login/login.html';
     }
 }

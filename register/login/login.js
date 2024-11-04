@@ -8,6 +8,7 @@ document.getElementById('login').addEventListener('click', function(e) {
     const storedPassword = localStorage.getItem('password');
 
     if(username === storedUsername && password === storedPassword) {
+        sessionStorage.setItem('isLoggedIn','true');
         window.location.href = '../../dashboard/dashboard.html';
     }
     else{

@@ -78,3 +78,16 @@ function resetForm() {
 
 // Initialize user list when the page loads
 document.addEventListener('DOMContentLoaded', displayUsers);
+
+function showLogoutDialog() {
+    document.getElementById('logout-dialog').style.display = 'flex';
+};
+
+function confirmLogout(isConfirmed){
+    document.getElementById('logout-dialog').style.display = 'none';
+
+    if (isConfirmed){
+        sessionStorage.setItem('isLoggedIn','false');
+        window.location.href = '../register/login/login.html';
+    }
+}

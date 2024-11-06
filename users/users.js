@@ -3,7 +3,7 @@ if(sessionStorage.getItem('isLoggedIn') !== 'true'){
   }
 
 // Array to hold user objects
-let users = [];
+let users = JSON.parse(localStorage.getItem('users')) || [];
 let editingIndex = null;
 
 // Function to display the list of users
@@ -47,6 +47,7 @@ function saveUser() {
             alert('User updated successfully!');
             editingIndex = null;
         }
+        localStorage.setItem('users', JSON.stringify(users)); // Save to local storage
         displayUsers(); // Refresh the user list
         resetForm(); // Reset the form
     } else {
@@ -67,6 +68,7 @@ function editUser(index) {
 // Function to delete a user
 function deleteUser(index) {
     users.splice(index, 1); // Remove user at the specified index
+    localStorage.setItem('users', JSON.stringify(users)); // Update local storage
     displayUsers(); // Refresh the user list
 }
 

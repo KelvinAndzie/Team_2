@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Dashboard</title>
+    <link rel="stylesheet" href="users.css"> 
+</head>
+<body>
+   
+    <aside class="sidebar">
+        <div class="logo">
+            <h2>Demon LordZabuza</h2>
+        </div>
+        <ul class="menu">
+            <li onclick="home()"><a href="#">Home</a></li>
+            <li onclick="users()"><a href="#">Users</a></li>
+        </ul>
+        <div class="logout" id="logout" onclick="showLogoutDialog()">
+            <div>LogOut</div>
+            <img src="logout.png" alt="logout" class="img">
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+    
+        <header class="topbar">
+            <h1>Welcome to the Users Section</h1>
+            <div class="profile-section">
+                <span>Notifications</span>
+                <span>Messages</span>
+                <span>Profile (Dropdown)</span>
+            </div>
+        </header>
+        
+        <section class="users-overview">
+                <!-- Dynamic User Listing Section -->
+                <div class="user-list" id="user-list">
+                    <!-- The list of registered users will be displayed here -->
+                </div>
+        
+                <!-- Form to Add or Manage Users -->
+                <div class="add-user">
+                    <h2>Add / Manage User</h2>
+                    <form id="user-form">
+                        <input type="hidden" id="user-id" name="user-id"> <!-- Hidden input for user ID -->
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="user-name" required>
+                        <label for="contact">Contact:</label>
+                        <input type="tel" id="user-contact" name="contact" required>
+        
+                        <label for="user-email">Email:</label>
+                        <input type="email" id="user-email" name="user-email" required>
+        
+                        <label for="user-role">Role:</label>
+                        <input type="text" id="user-role" name="user-role" required>
+        
+                        <button type="button" onclick="saveUser()">Save User</button>
+                        <button type="button" onclick="resetForm()">Cancel</button>
+                    </form>
+                </div>
+        </section>
+        <div id="logout-dialog" class="dialog-overlay" style="display: none;">
+            <div class="dialog-box">
+                <p>Are you sure you want to log out?</p>
+                <button onclick="confirmLogout(true)">Yes</button>
+                <button onclick="confirmLogout(false)">No</button>
+            </div>
+        </div>
+    </main>
+    <script src="users.js"></script> 
+</body>
+</html>

@@ -93,3 +93,7 @@ function confirmLogout(isConfirmed){
         window.location.href = '../register/login/login.html';
     }
 }
+
+function home(){
+    window.location.href = '../dashboard/dashboard.html';
+  }

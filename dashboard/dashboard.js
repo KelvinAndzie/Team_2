@@ -1,5 +1,5 @@
 if(sessionStorage.getItem('isLoggedIn') !== 'true'){
-    window.location.href = '../register/login/login.html'
+    window.location.href = '../Authentication/login/login.html'
 }
 
 const performanceChart = document.getElementById('performanceChart').getContext('2d');
@@ -73,7 +73,7 @@ function confirmLogout(isConfirmed){
 
     if (isConfirmed){
         sessionStorage.setItem('isLoggedIn','false');
-        window.location.href = '../register/login/login.html';
+        window.location.href = '../Authentication/login/login.html';
     }
 }
 

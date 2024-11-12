@@ -227,3 +227,11 @@ body {
 .dialog-box button:hover{
     background-color: #f0f0f0;
 }
+
+/* Button Styling */
+button {
+    background-color: #34495e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }

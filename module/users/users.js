@@ -90,7 +90,7 @@ function confirmLogout(isConfirmed){
 
     if (isConfirmed){
         sessionStorage.setItem('isLoggedIn','false');
-        window.location.href = '../homepage/index.html';
+        window.location.href = '../../Authentication/login/login.html';
     }
 }
 

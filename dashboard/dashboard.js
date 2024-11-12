@@ -67,6 +67,7 @@ function showLogoutDialog() {
     document.getElementById('logout-dialog').style.display = 'flex';
 };
 
+
 function confirmLogout(isConfirmed){
     document.getElementById('logout-dialog').style.display = 'none';
 
@@ -78,6 +79,4 @@ function confirmLogout(isConfirmed){
 
 function users(){
     window.location.href = '../users/users.html';
-  } 
-
-  
+  }

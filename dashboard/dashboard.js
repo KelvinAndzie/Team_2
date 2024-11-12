@@ -78,5 +78,5 @@ function confirmLogout(isConfirmed){
 }
 
 function users(){
-    window.location.href = '../users/users.html';
+    window.location.href = '../module/users/users.html';
   }

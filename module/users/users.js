@@ -1,5 +1,5 @@
 if(sessionStorage.getItem('isLoggedIn') !== 'true'){
-    window.location.href = '../register/login/login.html';
+    window.location.href = '../../Authentication/login/login.html';
   }
 
 // Array to hold user objects
@@ -95,5 +95,5 @@ function confirmLogout(isConfirmed){
 }
 
 function home(){
-    window.location.href = '../dashboard/dashboard.html';
+    window.location.href = '../../dashboard/dashboard.html';
   }

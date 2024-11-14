@@ -1,4 +1,4 @@
-document.getElementById('login').addEventListener('click', function(e) { 
+document.getElementById('login').addEventListener('click', function(e) {  
     e.preventDefault();  // Prevent form submission to keep control over the process.
 
     const username = document.getElementById('username').value.trim();  // Get username from the input.
@@ -13,6 +13,7 @@ document.getElementById('login').addEventListener('click', function(e) {
     // If the user is found, log them in
     if (user) {
         sessionStorage.setItem('isLoggedIn', 'true');  // Set sessionStorage to indicate that the user is logged in
+        sessionStorage.setItem('username', username);  // Store the username in sessionStorage
         window.location.href = '../../dashboard/dashboard.html';  // Redirect to the dashboard page
     } else {
         alert("Invalid Username or Password!");  // Show error message if credentials are incorrect

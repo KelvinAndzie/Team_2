@@ -8,7 +8,7 @@ document.getElementById('login').addEventListener('click', function(e) {
     const storedUsername = localStorage.getItem('username');
     const storedPassword = localStorage.getItem('password');
 
-    const user = users.find(u => u.name === username && u.email === password);
+    const user = users.find(u => u.name === username && u.password === password);
 
     if((username === storedUsername && password === storedPassword)|| (user)) {
         sessionStorage.setItem('isLoggedIn','true');

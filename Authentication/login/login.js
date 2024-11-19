@@ -7,6 +7,10 @@ document.getElementById('login').addEventListener('click', function(e) {
     // Retrieve users from localStorage (this will contain all registered users added by the admin)
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
+
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
+
     // Find the user that matches the entered username and password
     const user = users.find(u => u.name === username && u.password === password);
 

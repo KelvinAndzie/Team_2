@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Dashboard</title>
-    <link rel="stylesheet" href="users.css"> 
+    <title>User Management</title>
+    <link rel="stylesheet" href="users.css">
 </head>
 <body>
-   
+    <!-- Sidebar with Admin Panel Title -->
     <aside class="sidebar">
         <div class="logo">
             <h2>Demon LordZabuza</h2>
@@ -22,9 +23,7 @@
         </div>
     </aside>
 
-
     <main class="main-content">
-    
         <header class="topbar">
             <h1>Welcome to the Users Section</h1>
             <div class="profile-section">
@@ -35,32 +34,36 @@
         </header>
         
         <section class="users-overview">
-                <!-- Dynamic User Listing Section -->
-                <div class="user-list" id="user-list">
-                    <!-- The list of registered users will be displayed here -->
-                </div>
-        
-                <!-- Form to Add or Manage Users -->
-                <div class="add-user">
-                    <h2>Add / Manage User</h2>
-                    <form id="user-form">
-                        <input type="hidden" id="user-id" name="user-id"> <!-- Hidden input for user ID -->
-                        <label for="user-name">Name:</label>
-                        <input type="text" id="user-name" name="user-name" required>
-                        <label for="contact">Contact:</label>
-                        <input type="tel" id="user-contact" name="contact" required>
-        
-                        <label for="user-email">Email:</label>
-                        <input type="email" id="user-email" name="user-email" required>
-        
-                        <label for="user-role">Role:</label>
-                        <input type="text" id="user-role" name="user-role" required>
-        
-                        <button type="button" onclick="saveUser()">Save User</button>
-                        <button type="button" onclick="resetForm()">Cancel</button>
-                    </form>
-                </div>
+            <div class="user-list" id="user-list"></div>
+            
+            <!-- Add / Manage User Form -->
+            <div class="add-user">
+                <h2>Add / Manage User</h2>
+                <form id="user-form">
+                    <label for="user-name">Name:</label>
+                    <input type="text" id="user-name" name="user-name" required>
+
+                    <label for="user-contact">Contact:</label>
+                    <input type="tel" id="user-contact" name="user-contact" required>
+
+                    <label for="user-email">Email:</label>
+                    <input type="email" id="user-email" name="user-email" required>
+
+                    <label for="user-role">Role:</label><br>
+                    <label>
+                        <input type="radio" name="role" id="role-admin" value="Admin" required> Admin
+                    </label>
+                    <label>
+                        <input type="radio" name="role" id="role-staff" value="Staff" required> Staff
+                    </label>
+
+                    <button type="button" onclick="saveUser()">Save User</button>
+                    <button type="button" onclick="resetForm()">Cancel</button>
+                </form>
+            </div>
         </section>
+        
+        <!-- Logout Confirmation Dialog -->
         <div id="logout-dialog" class="dialog-overlay" style="display: none;">
             <div class="dialog-box">
                 <p>Are you sure you want to log out?</p>
@@ -69,6 +72,6 @@
             </div>
         </div>
     </main>
-    <script src="users.js"></script> 
+    <script src="users.js"></script>
 </body>
 </html>

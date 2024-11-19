@@ -2,6 +2,39 @@ if(sessionStorage.getItem('isLoggedIn') !== 'true'){
     window.location.href = '../Authentication/login/login.html'
 }
 
+// Function to initialize the sidebar based on the user's role
+function initializeSidebar() {
+    // Get logged-in user's details
+    const username = sessionStorage.getItem('username');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.name === username);
+
+    if (user) {
+        // Check the user's role
+        if (user.role === 'Staff') {
+            // Hide the 'Users' button for staff
+            document.getElementById('users-button').style.display = 'none';
+        } else if (user.role === 'Admin') {
+            // Show both 'Home' and 'Users' buttons for Admin
+            document.getElementById('home-button').style.display = 'block';
+            document.getElementById('users-button').style.display = 'block';
+        }
+    }
+}
+
+// Call this function on page load
+document.addEventListener('DOMContentLoaded', initializeSidebar);
+
+// Function to navigate to the Home page
+function home() {
+    window.location.href = '../../dashboard/dashboard.html';  // Redirect to the home dashboard page
+}
+
+// Function to navigate to the Users page
+function users() {
+    window.location.href = '../../dashboard/users.html';  // Redirect to the users management page
+}
+
 const performanceChart = document.getElementById('performanceChart').getContext('2d');
 const performanceData = new Chart(performanceChart, {
     type: 'bar',
@@ -73,10 +106,15 @@ function confirmLogout(isConfirmed){
 
     if (isConfirmed){
         sessionStorage.setItem('isLoggedIn','false');
+        sessionStorage.removeItem('username'); // Remove the username from sessionStorage
         window.location.href = '../Authentication/login/login.html';
     }
 }
 
 function users(){
     window.location.href = '../module/users/users.html';
-  }
+  } 
+
+  function home(){
+    window.location.href = '../dashboard/dashboard.html';
+  } 

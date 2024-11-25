@@ -19,6 +19,7 @@ function displayUsers() {
             userList.innerHTML += `
                 <div class="user-item">
                     <h3>${user.name}</h3>
+                    <p>Username: ${user.username}</p>
                     <p>Contact: ${user.contact}</p>
                     <p>Email: ${user.email}</p>
                     <p>Role: ${user.role}</p>
@@ -44,6 +45,7 @@ function generatePassword() {
 // Function to save or update a user
 function saveUser() {
     const name = document.getElementById('user-name').value.trim();
+    const username = document.getElementById('user-username').value.trim();
     const contact = document.getElementById('user-contact').value.trim();
     const email = document.getElementById('user-email').value.trim();
     
@@ -55,16 +57,16 @@ function saveUser() {
         return;
     }
 
-    if (name && contact && email && role) {
+    if (name && username && contact && email && role) {
         const password = generatePassword(); // Generate a password for the new user
 
         if (editingIndex === null) {
             // Add new user
-            users.push({ name, contact, email, role, password });
+            users.push({ name, username, contact, email, role, password });
             alert('User added successfully!');
         } else {
             // Update existing user (without changing password)
-            users[editingIndex] = { name, contact, email, role, password: users[editingIndex].password };
+            users[editingIndex] = { name,username,contact, email, role, password: users[editingIndex].password };
             alert('User updated successfully!');
             editingIndex = null;
         }
@@ -81,6 +83,7 @@ function saveUser() {
 function editUser(index) {
     const user = users[index];
     document.getElementById('user-name').value = user.name;
+    document.getElementById('user-username').value = user.username;
     document.getElementById('user-contact').value = user.contact;
     document.getElementById('user-email').value = user.email;
     

@@ -18,7 +18,14 @@ document.getElementById('login').addEventListener('click', function(e) {
     }
 
     // Find the user that matches the entered username and password
-    const user = users.find(u => u.name === username && u.password === password);
+    let user = null;
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].username === username && users[i].password === password) {
+            user = users[i];
+            break; // Exit the loop once a match is found
+        }
+    }
+
 
     // If the user is found, log them in
     if (user) {

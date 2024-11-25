@@ -10,7 +10,7 @@
    
     <aside class="sidebar">
         <div class="logo">
-            <h2>Demon LordZabuza</h2>
+            <h2>TEAM 2</h2>
         </div>
         <ul class="menu">
             <li id="home-button" onclick="home()"><a href="#">Home</a></li>
@@ -36,40 +36,52 @@
 
        
         <section class="dashboard-overview">
-            <div class="stats-card">
-                <h3>Total Students</h3>
-                <p>1,200</p>
+            <div class="stats-card" id="staffCard">
+                <h3>Total Staff</h3>
+                <p id="totalStaff">50</p>
+            </div>
+            <div class="stats-card" id="usersCard">
+                <h3>Total Users</h3>
+                <p id="totalUsers">75</p>
             </div>
             <div class="stats-card">
-                <h3>Total Teachers</h3>
-                <p>75</p>
+                <h3>Total News</h3>
+                <p id="totalNews">99</p>
             </div>
-            <div class="stats-card">
-                <h3>Active Classes</h3>
-                <p>50</p>
-            </div>
-            <div class="stats-card">
-                <h3>Average Grades</h3>
-                <p>B+</p>
-            </div>
+            <!--
+                <div class="stats-card">
+                    <h3>Average Grades</h3>
+                    <p>B+</p>
+                </div>
+            -->
         </section>
 
      
         <section class="charts-section">
-            <div class="chart">
-                <h3>Student Performance</h3>
+            <!--Chart for just admins-->
+            <div class="chart" id="usersChart">
+                <h3>Number of users per month</h3>
                 <canvas id="performanceChart"></canvas> 
             </div>
+            
+            <!--Chart for just users-->
+            <div class="chart">
+                <h3>Number of news per month</h3>
+                <canvas id="newsChart"></canvas> 
+            </div>
+            
+            <!--
             <div class="chart">
                 <h3>Attendance Rate</h3>
                 <canvas id="attendanceChart"></canvas> 
             </div>
+            -->
         </section>
 
       
         <section class="announcements">
             <h3>Upcoming Events</h3>
-            <ul>
+            <ul id="upcomingEvents">
                 <li>Parent-Teacher Conference - Oct 25, 2024</li>
                 <li>Final Exams - Dec 10-20, 2024</li>
                 <li>Winter Break - Dec 24, 2024 to Jan 2, 2025</li>
@@ -78,9 +90,9 @@
 
         <section class="announcements">
             <h3>Recent Announcements</h3>
-            <ul>
-                <li>New library resources available.</li>
-                <li>Sports Day event scheduled for Nov 5, 2024.</li>
+            <ul id="announcements">
+                <li>New library resources available.&nbsp;<button>Edit</button></li>
+                <li>Sports Day event scheduled for Nov 5, 2024.&nbsp;<button>Edit</button></li>
             </ul>
         </section>
         <div id="logout-dialog" class="dialog-overlay" style="display: none;">
